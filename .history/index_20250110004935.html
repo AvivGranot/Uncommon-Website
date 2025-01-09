@@ -107,6 +107,7 @@
 
         .container {
             max-width: 900px;
+            text-align: center; /* Aligns text to the center */
             margin: 40px auto;
             background-color: #fff;
             border-radius: 15px;
@@ -116,28 +117,26 @@
 
         .about-container {
     text-align: center; /* Aligns text to the center */
-    max-width: 800px; /* Restricts width for readability */
-    margin: 0 auto; /* Centers the div horizontally */
-    padding: 20px; /* Adds spacing inside the container */
-    background-color: #f8f9fa; /* Optional: Adds a light background color */
-    border-radius: 10px; /* Optional: Rounds the corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px 35px;
+        }
+
+        .container {
+    max-width: 100%; /* Ensure it scales to mobile width */
+    padding: 10px; /* Add some padding for better spacing */
 }
 
-#about-section h2 {
-    font-size: 2rem; /* Larger heading font size */
-    margin-bottom: 10px;
-    text-align: center; /* Aligns text to the center */
-
+p, h1, h2 {
+    font-size: 1rem; /* Adjust text size for readability on smaller screens */
 }
 
-#about-section p {
-    font-size: 1.25rem; /* Adjust the paragraph font size */
-    margin: 0 auto; /* Centers the div horizontally */
-    padding: 20px; /* Adds spacing inside the container */
-    background-color: #f8f9fa; /* Optional: Adds a light background color */
-    border-radius: 10px; /* Optional: Rounds the corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+img {
+    max-width: 100%; /* Make images scale to the container width */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .image {
@@ -231,14 +230,10 @@
         <a href="#contact" class="btn">Get in Touch</a>
     </div>
 
-    <div id="about-section">
+    <div class="about-container">
         <h2>About The Blog</h2>
-        <p>
-            This blog was founded after two years of writings. It all began when I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world. So, after a lot of conversations with friends, mentors, and peers, they encouraged me to write my beliefs. Now it is time to publish it to the world. Hope you would like it, and would be more than happy to hear your feedback and perspectives.
-        </p>
+        <p>This blog was founded after two years of writing. It all began when I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world. So, after a lot of conversations with friends, mentors, and peers, they encouraged me to write my beliefs. Now it is time to publish it to the world. Hope you like it, and I would be more than happy to hear your feedback and perspectives.</p>
     </div>
-    
-
 
     <section style="
     text-align: center; 
@@ -284,8 +279,8 @@
 
     <div class="container" id="about">
         <h2>About Me</h2>
-        <p>My name is Aviv, and I'm currenly a BA stuent at Reichman University. I started my path in the real estate field, growing from no knowledge at all, to be an intermediary of transactions worth tens million dollars in just three years. Yet, now I pursue greater goals, as this blog describes. To truly better the world in generations to come. Therefore I deepply seek to work with brilliant minds, values-led, and to experience over and over again 'cognitive friction'.</p>      
-        <p>In my free time, I love to read books, especialy biographies of Uncommon People, to excercise, to volunteer (also founded serval programs in my university), and to just enjoy life.</p>
+        <p>My name is Aviv, and I'm currenly a BA stuent at Reichman University. I started my path in the real estate field, growing from no knowledge at all, to be an intermediary in transactions worth tens million dollars in just three years. Yet, now I pursue greater goals, as this blog describes. To truly better the world in generations to come. Therefore I deepply seek to work with brilliant minds, values-led, and to experience over and over again 'cognitive friction'.</p>      
+        <p>In my free time, I enjoy reading books, excersicing and to spend time in nature and family.</p>
     </div>
 
     <div class="container" id="contact">
