@@ -43,14 +43,15 @@
         }
 
         .image {
-    width: 100%; /* Fills the entire container width */
-    max-width: none; /* Removes maximum width restriction */
-    height: auto; /* Automatically adjusts height proportionally */
-    max-height: 600px; /* Keeps height capped for balance */
-    object-fit: contain; /* Maintains aspect ratio */
-    border-radius: 10px; /* Adds rounded corners */
+    width: 120%; /* Makes the image wider than the container */
+    max-width: none; /* Removes the maximum width limitation */
+    height: auto; /* Automatically adjusts the height proportionally */
+    max-height: 600px; /* Maintains a reasonable height cap */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 10px; /* Rounded corners */
     margin: 15px 0;
 }
+
 
 
 
