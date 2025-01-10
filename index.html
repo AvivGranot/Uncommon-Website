@@ -142,31 +142,28 @@
 
 .image {
     width: 100%; /* Make the image responsive */
-    max-width: 600px; /* Optional: Limit the maximum width */
+    max-width: 800px; /* Increase the maximum width for larger devices */
     height: auto; /* Maintain the aspect ratio */
     margin: 0 auto; /* Center the image */
-    display: block; /* Fix inline display issues */
+    display: block; /* Ensure block display for proper alignment */
 }
 
 section {
     background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
     background-size: cover;
     width: 100%;
-    min-height: 500px; /* Ensures proper height */
-    height: auto; /* Auto height for responsiveness */
-    padding: 2em 1em;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
     section {
-        background-size: contain; /* Ensures the image adjusts for smaller screens */
-        background-repeat: no-repeat;
-        min-height: 300px; /* Reduce height for mobile */
+        background-size: contain; /* Adjust the image to fit smaller screens */
+        aspect-ratio: auto; /* Allow flexibility in the ratio for mobile devices */
+        min-height: 300px; /* Set a reasonable height for mobile */
     }
 }
-
 
         .blog-list {
             list-style: none;
@@ -304,7 +301,7 @@ section {
 
     <div class="container" id="about">
         <h2>About Me</h2>
-        <p>My name is Aviv, and I'm currenly a B.A stuent at Reichman University. I started my path in the real estate field, growing from no knowledge at all, to be an intermediary of transactions worth tens million dollars in just three years. Yet, now I pursue greater goals, as this blog describes. To truly better the world in generations to come. Therefore I deepply seek to work with brilliant minds, values-led, and to experience over and over again 'cognitive friction'.</p>      
+        <p>My name is Aviv, and I'm currenly a BA stuent at Reichman University. I started my path in the real estate field, growing from no knowledge at all, to be an intermediary of transactions worth tens million dollars in just three years. Yet, now I pursue greater goals, as this blog describes. To truly better the world in generations to come. Therefore I deepply seek to work with brilliant minds, values-led, and to experience over and over again 'cognitive friction'.</p>      
         <p>In my free time, I love to read books, especialy biographies of Uncommon People, to excercise, to volunteer (also founded serval programs in my university), and to just enjoy life.</p>
     </div>
 
