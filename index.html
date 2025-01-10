@@ -152,18 +152,22 @@ section {
     background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
     background-size: cover;
     width: 100%;
-    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
+    height: auto; /* Adjust height automatically */
+    min-height: 500px; /* Ensures proper height */
+    padding: 2em 1em;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
     section {
-        background-size: contain; /* Adjust the image to fit smaller screens */
-        aspect-ratio: auto; /* Allow flexibility in the ratio for mobile devices */
-        min-height: 300px; /* Set a reasonable height for mobile */
+        background-size: contain; /* Adjust image size for smaller screens */
+        background-position: top center; /* Align image properly */
+        background-repeat: no-repeat;
+        min-height: 300px; /* Reduce height for mobile */
     }
 }
+
 
         .blog-list {
             list-style: none;
