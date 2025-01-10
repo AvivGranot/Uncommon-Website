@@ -149,23 +149,28 @@
 }
 
 section {
-    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
-    background-size: contain; /* Makes the image fully visible without cropping */
-    width: 100%; /* Full width of the section */
-    height: auto; /* Auto height to adapt to the image's aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width */
     min-height: 300px; /* Minimum height for smaller devices */
-    padding: 1em 0; /* Add padding for spacing */
+    height: auto; /* Allow height to adjust dynamically */
+    padding: 1em;
+    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
+    background-size: contain; /* Fit the image without cropping */
+    background-position: center; /* Center the image perfectly */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
     section {
-        background-size: cover; /* Adjust for smaller screens */
-        min-height: 200px; /* Decrease height on mobile */
-        background-position: center center; /* Center the image */
+        min-height: 200px; /* Decrease height on smaller screens */
+        padding: 0.5em; /* Adjust padding for better spacing */
+        background-size: contain; /* Keep image proportions */
     }
 }
+
 
 
         .blog-list {
