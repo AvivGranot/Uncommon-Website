@@ -30,14 +30,15 @@
         }
         
         .image {
-    width: 100%; /* Fills the entire container width */
-    max-width: none; /* Removes maximum width restriction */
-    height: auto; /* Automatically adjusts height proportionally */
-    max-height: 600px; /* Keeps height capped for balance */
-    object-fit: contain; /* Maintains aspect ratio */
-    border-radius: 10px; /* Adds rounded corners */
-    margin: 15px 0;
+    width: 100%; /* Fill container width */
+    max-width: 600px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Scale image without distortion */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    margin: 15px auto; /* Center the image vertically and horizontally */
+    display: block; /* Ensures proper layout */
 }
+
 
         h1 {
             font-size: 2.5rem;
