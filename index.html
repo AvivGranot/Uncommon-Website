@@ -141,32 +141,29 @@
 }
 
 .image {
-    width: 100%; /* Responsive width */
-    max-width: 800px; /* Increased max-width for larger devices */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center the image horizontally */
-    display: block; /* Ensure proper alignment */
+    width: 100%; /* Ensures it scales proportionally */
+    max-width: 100%; /* No restriction on maximum width */
+    height: auto; /* Maintains aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Makes it behave as a block element */
 }
 
 section {
     background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
-    background-size: contain; /* Ensure the image fits properly */
-    width: 100%; /* Full width */
-    height: auto; /* Allow height to adjust dynamically */
-    aspect-ratio: 16 / 9; /* Maintain a consistent aspect ratio */
-    max-width: 800px; /* Restrict maximum width for consistency */
-    margin: 0 auto; /* Center the section */
-    padding: 2em 1em; /* Adjust padding as needed */
+    background-size: contain; /* Makes the image fully visible without cropping */
+    width: 100%; /* Full width of the section */
+    height: auto; /* Auto height to adapt to the image's aspect ratio */
+    min-height: 300px; /* Minimum height for smaller devices */
+    padding: 1em 0; /* Add padding for spacing */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 768px) {
     section {
-        background-size: cover; /* Cover the screen for better mobile adaptation */
-        height: auto; /* Maintain aspect ratio */
-        width: 90%; /* Add slight margin for smaller screens */
-        aspect-ratio: unset; /* Remove fixed aspect ratio for flexibility */
+        background-size: cover; /* Adjust for smaller screens */
+        min-height: 200px; /* Decrease height on mobile */
+        background-position: center center; /* Center the image */
     }
 }
 
@@ -257,7 +254,7 @@ section {
     <div id="about-section">
         <h2>About The Blog</h2>
         <p>
-            This blog was founded after two years of writing. It all began when I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world, more importantly, didn't create any true value on global markets, and on generations to come. Later in this blog I shall write about the numbers creteria for inlfuence. So, after a lot of conversations with friends, mentors, and peers, they encouraged me to finaly write my beliefs - hope they were not wrong. Now is the time to publish them to the world. Hope you would enjoy the reading, and would be more than happy to hear your feedback and perspectives.
+            This blog was founded after two years of writing. It all began when I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world, more importantly, didn't create any true value on global markets, and on generations to come. Later in this blog I shall write about the numbers creteria for inlfuence. So, after a lot of conversations with friends, mentors, and peers, they encouraged me to finaly write my beliefs - hope they were not wrong. Hope you would enjoy the reading, and would be more than happy to hear your feedback and perspectives.
         </p>
     </div>
     
