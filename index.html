@@ -165,10 +165,11 @@ section {
 
 @media only screen and (max-width: 768px) {
     section {
-        min-height: 300px; /* Decrease height on smaller screens */
-        padding: 0.5em; /* Adjust padding for better spacing */
-        background-size: cover; /* Keep image proportions */
-        background-position: center; /* Center the image perfectly */
+        min-height: 260px; /* Decrease height on smaller screens */
+        padding: 0.75em;
+        background-size: contain; /* Keep full image visible on mobile */
+        background-position: center;
+        aspect-ratio: 16 / 9; /* Maintain consistent ratio on mobile */
     }
 }
 
