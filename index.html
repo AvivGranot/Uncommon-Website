@@ -238,6 +238,106 @@ section {
         footer a:hover {
             color: #e0a800;
         }
+
+        /* Mobile Responsive Styles */
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .hero {
+                padding: 80px 15px 40px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+
+            .container {
+                margin: 20px 15px;
+                padding: 20px;
+            }
+
+            #about-section h2 {
+                font-size: 1.5rem;
+            }
+
+            #about-section p {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            .blog-list a {
+                font-size: 1.1rem;
+            }
+
+            .blog-list h3 {
+                font-size: 1.1rem;
+            }
+
+            .blog-list p {
+                font-size: 0.95rem;
+            }
+
+            .read-more {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+
+            form input, form textarea, form button {
+                padding: 10px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            nav ul {
+                gap: 5px;
+            }
+
+            nav ul li a {
+                font-size: 0.8rem;
+                padding: 6px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                margin: 15px 10px;
+                padding: 15px;
+            }
+
+            #about-section h2 {
+                font-size: 1.3rem;
+            }
+
+            #about-section p {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
     </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J80TV24BR8"></script>
@@ -266,41 +366,40 @@ section {
     </div>
 
     <div id="about-section">
-        <h2>About</h2>
+        <h2>Why you should read this</h2>
         <p>
-            Uncommonness entered my life in 2022. It all began when I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world—more importantly, it didn't create any true value in global markets or for generations to come. After many conversations with friends, mentors, and peers, they encouraged me to finally write down my beliefs. I hope they weren't wrong. Please enjoy the reading, and I would be more than happy to hear your feedback and perspectives.
+            In 2022, I experienced the best growth in my career and life, yet felt that it didn't mean a thing to the greater world. More importantly, it didn't create any true value at scale. The more I researched and examined Commonness vs. Uncommonness, I realized we are far more common than uncommon, yet we perceive life as unique and special. We were never taught to think differently, to align our purpose far wider than we ever believed. How, for example, can each of us be the next 'Da Vinci' or at least aim to have the same legacy? And why should you not compromise on Mediocracy, even and especially when your environment is mediocre? After lots of conversations with friends, mentors, and peers, I was encouraged to finally write down this. I hope they weren't wrong. Enjoy the ride!
         </p>
     </div>
     
 
 
-    <section style="
-    text-align: center; 
-    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center; 
-    background-size: cover; 
-    margin: 2em auto; 
-    max-width: 1100px; 
-    width: 100%;
-    min-height: 700px; 
-    padding: 6em 1em; 
-    border-radius: 10px; 
+    <section class="hero-image" style="
+    text-align: center;
+    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
+    background-size: cover;
+    margin: 2em auto;
+    max-width: 1100px;
+    width: calc(100% - 30px);
+    min-height: 500px;
+    padding: 4em 1em;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-    <div style="
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        justify-content: center; 
-        height: 100%; 
-        padding: 1em;">
-    </div>
 </section>
 
 <style>
     @media only screen and (max-width: 768px) {
-        section {
-            background-size: contain; /* Ensures the image fits the screen width */
-            min-height: 300px; /* Adjusts height for smaller screens */
-            background-position: center; /* Keeps the image centered */
+        .hero-image {
+            min-height: 250px !important;
+            padding: 2em 0.5em !important;
+            margin: 1em auto !important;
+            background-size: contain !important;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .hero-image {
+            min-height: 180px !important;
+            padding: 1em 0.5em !important;
         }
     }
 </style>
@@ -341,9 +440,8 @@ section {
     </div>
 
     <div class="container" id="about">
-        <h2>About the author</h2>
-        <p>Hi, my name is Aviv, and I started my journey in the real estate field, growing from no knowledge at all to being an intermediary in transactions worth tens of millions of dollars in just three years. Yet now I pursue greater goals, as my posts describe: to truly better the world for generations to come. Therefore, I deeply seek to work with brilliant minds, values-led individuals, and to experience 'cognitive friction' over and over again.</p>      
-        <p>In my free time, I love to read books, especially biographies of Uncommon People, to exercise, to volunteer (I also founded several programs at my university), and to just enjoy life.</p>
+        <h2>About</h2>
+        <p>Hi, my name is Aviv and I'm a GTM Specialist at Boom, co-founder of the Human Skills Club and View From The Top, former Special Forces combat soldier, with extensive experience in 'classic' real estate ($20M+ deals), and a lifelong volunteer. I'm a huge believer in top performers, a growth mindset, a high sense of urgency, and self-discipline. Personally, I love to read (obsession for biographies), exercise, eat milk chocolate, and travel like natives and locals. I hitchhiked the Alaska wilderness alone and volunteered in the Faroe Islands.</p>
     </div>
 
     <div class="container" id="contact">
