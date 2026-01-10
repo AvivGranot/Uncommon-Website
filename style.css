@@ -236,8 +236,9 @@ img {
   text-align: left;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-lg) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   padding-top: calc(var(--space-xl) + var(--header-height));
+  padding-bottom: var(--space-md);
 }
 
 .category-label {
@@ -280,7 +281,7 @@ img {
 .intro-section {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   text-align: left;
 }
 
