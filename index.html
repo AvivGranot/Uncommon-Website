@@ -38,12 +38,12 @@
         <section class="hero" id="home">
             <span class="category-label">A Series Of Essays By <a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Aviv Granot</a></span>
             <h1>Uncommon People in a Common World</h1>
-            <p class="hero-quote">"If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing"</p>
+            <p class="hero-quote" data-text="&quot;If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing&quot;">"If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing"</p>
             <span class="hero-attribution">Benjamin Franklin</span>
         </section>
 
         <section class="intro-section">
-            <p>In 2022, I experienced my most significant personal and professional growth, yet I felt it didn't mean a thing to the greater world. More importantly, it didn't create true value at scale. As I dove deeper into the concept of Commonness vs. Uncommonness, I realized something: while we perceive our lives as unique, we are actually far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible. How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity, especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!</p>
+            <p class="intro-paragraph">In 2022, I experienced my most significant personal and professional growth, yet I felt it didn't mean a thing to the greater world. More importantly, it didn't create true value at scale. As I dove deeper into the concept of Commonness vs. Uncommonness, I realized something: while we perceive our lives as unique, we are actually far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible. How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity, especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!</p>
         </section>
 
         <section class="posts-section" id="posts">
@@ -130,6 +130,167 @@
                     document.body.style.overflow = '';
                 });
             });
+
+            // Hero Animation Controller
+            class HeroAnimationController {
+                constructor(options = {}) {
+                    this.quoteElement = document.querySelector('.hero-quote');
+                    this.attributionElement = document.querySelector('.hero-attribution');
+                    this.introElement = document.querySelector('.intro-paragraph');
+                    this.postsSection = document.querySelector('.posts-section');
+                    this.goalsSection = document.querySelector('.goals-section');
+                    this.aboutSection = document.querySelector('.about-section');
+                    this.footer = document.querySelector('.site-footer');
+                    this.typingSpeed = options.typingSpeed || 50;
+                    this.cursorBlinkDuration = 1500;
+                    this.attributionDelay = 300;
+                    this.introDelay = 500;
+                    this.hasAnimated = false;
+
+                    // Check for reduced motion preference
+                    this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                }
+
+                init() {
+                    if (this.prefersReducedMotion) {
+                        this.showAllImmediately();
+                        return;
+                    }
+
+                    // Store original text and clear element
+                    this.originalText = this.quoteElement.getAttribute('data-text');
+                    this.quoteElement.textContent = '';
+
+                    // Set initial states
+                    this.quoteElement.classList.add('typewriter-ready');
+                    this.attributionElement.classList.add('attribution-hidden');
+                    this.introElement.classList.add('intro-hidden');
+
+                    // Hide following sections
+                    this.postsSection.classList.add('section-hidden');
+                    this.goalsSection.classList.add('section-hidden');
+                    this.aboutSection.classList.add('section-hidden');
+                    this.footer.classList.add('section-hidden');
+
+                    // Prevent scrolling during animation
+                    document.body.classList.add('animation-in-progress');
+
+                    // Use Intersection Observer to trigger on scroll into view
+                    const observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting && !this.hasAnimated) {
+                            this.hasAnimated = true;
+                            this.startAnimation();
+                            observer.disconnect();
+                        }
+                    }, { threshold: 0.3 });
+
+                    observer.observe(this.quoteElement);
+                }
+
+                showAllImmediately() {
+                    // For users who prefer reduced motion
+                    const text = this.quoteElement.getAttribute('data-text');
+                    this.quoteElement.textContent = text;
+                    this.attributionElement.classList.add('attribution-visible');
+                    this.introElement.classList.add('intro-visible');
+                    // Show all sections immediately
+                    this.postsSection.classList.add('section-visible');
+                    this.goalsSection.classList.add('section-visible');
+                    this.aboutSection.classList.add('section-visible');
+                    this.footer.classList.add('section-visible');
+                }
+
+                async startAnimation() {
+                    await this.typeQuote();
+                    await this.delay(this.attributionDelay);
+                    await this.showAttribution();
+                    await this.delay(this.introDelay);
+                    await this.flowInIntro();
+                    await this.delay(300);
+                    await this.revealSections();
+                }
+
+                typeQuote() {
+                    return new Promise((resolve) => {
+                        const text = this.originalText;
+                        let index = 0;
+
+                        // Create cursor element
+                        const cursor = document.createElement('span');
+                        cursor.className = 'typewriter-cursor';
+                        cursor.textContent = '|';
+                        this.quoteElement.appendChild(cursor);
+
+                        const type = () => {
+                            if (index < text.length) {
+                                // Remove cursor, update text, re-add cursor
+                                cursor.remove();
+                                this.quoteElement.textContent = text.substring(0, index + 1);
+                                this.quoteElement.appendChild(cursor);
+                                index++;
+                                setTimeout(type, this.typingSpeed);
+                            } else {
+                                // Typing complete - blink cursor then remove
+                                setTimeout(() => {
+                                    cursor.classList.add('cursor-fade');
+                                    setTimeout(() => {
+                                        cursor.remove();
+                                        resolve();
+                                    }, 500);
+                                }, this.cursorBlinkDuration);
+                            }
+                        };
+
+                        type();
+                    });
+                }
+
+                showAttribution() {
+                    return new Promise((resolve) => {
+                        this.attributionElement.classList.add('attribution-visible');
+                        setTimeout(resolve, 500);
+                    });
+                }
+
+                flowInIntro() {
+                    return new Promise((resolve) => {
+                        this.introElement.classList.add('intro-visible');
+                        setTimeout(resolve, 800);
+                    });
+                }
+
+                revealSections() {
+                    return new Promise((resolve) => {
+                        // Remove scroll lock
+                        document.body.classList.remove('animation-in-progress');
+
+                        // Stagger the reveal of each section
+                        const sections = [
+                            this.postsSection,
+                            this.goalsSection,
+                            this.aboutSection,
+                            this.footer
+                        ];
+
+                        sections.forEach((section, index) => {
+                            setTimeout(() => {
+                                section.classList.add('section-visible');
+                            }, index * 150);
+                        });
+
+                        // Resolve after all sections have started animating
+                        setTimeout(resolve, sections.length * 150 + 800);
+                    });
+                }
+
+                delay(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+            }
+
+            // Initialize animation
+            const animator = new HeroAnimationController({ typingSpeed: 45 });
+            animator.init();
         });
     </script>
 </body>

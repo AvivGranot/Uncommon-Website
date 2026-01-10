@@ -267,6 +267,86 @@ img {
   margin-bottom: var(--space-lg);
 }
 
+/* ========================================
+   TYPEWRITER ANIMATION
+   ======================================== */
+
+/* Typewriter cursor */
+.typewriter-cursor {
+  display: inline;
+  font-weight: 400;
+  animation: blink 0.5s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.typewriter-cursor.cursor-fade {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Quote ready state (before animation) */
+.hero-quote.typewriter-ready {
+  min-height: 1.6em;
+}
+
+/* Attribution animation */
+.hero-attribution.attribution-hidden {
+  opacity: 0;
+}
+
+.hero-attribution.attribution-visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+/* Intro paragraph animation */
+.intro-paragraph.intro-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.intro-paragraph.intro-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Section reveal animation */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Prevent scrolling during animation */
+body.animation-in-progress {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-cursor {
+    animation: none;
+  }
+
+  .hero-attribution,
+  .intro-paragraph,
+  .section-visible {
+    transition: none;
+  }
+}
+
 .hero-quote {
   font-family: var(--font-heading);
   font-size: 1.25rem;
