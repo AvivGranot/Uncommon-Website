@@ -233,8 +233,10 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+  max-width: var(--content-width);
+  margin: 0 auto;
   padding: var(--space-xxl) var(--space-lg);
   padding-top: calc(var(--space-xxl) + var(--header-height));
 }
@@ -280,7 +282,7 @@ img {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-lg);
-  text-align: center;
+  text-align: left;
 }
 
 .intro-section p {
@@ -288,8 +290,8 @@ img {
   font-size: 1rem;
   line-height: 1.8;
   color: var(--text-primary);
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 /* ========================================
@@ -297,8 +299,8 @@ img {
    ======================================== */
 
 .image-section {
-  max-width: var(--max-width);
-  margin: var(--space-xl) auto;
+  max-width: var(--content-width);
+  margin: 0 auto;
   padding: 0 var(--space-lg);
 }
 
@@ -318,11 +320,11 @@ img {
 }
 
 .posts-section > .category-label {
-  text-align: center;
+  text-align: left;
 }
 
 .posts-section h2 {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-xl);
 }
 
@@ -384,7 +386,7 @@ img {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-lg);
-  text-align: center;
+  text-align: left;
 }
 
 .goals-section h2 {
@@ -395,8 +397,8 @@ img {
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 /* ========================================
@@ -410,7 +412,7 @@ img {
 }
 
 .about-section h2 {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-lg);
 }
 
@@ -641,8 +643,8 @@ img {
 
   .about-content {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .about-image {
@@ -660,6 +662,7 @@ img {
 
   .image-section {
     padding: 0 var(--space-md);
+    margin: 0 auto;
   }
 }
 
