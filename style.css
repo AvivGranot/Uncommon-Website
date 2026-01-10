@@ -232,8 +232,8 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-md) var(--space-lg);
@@ -282,7 +282,6 @@ img {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-md) var(--space-lg);
-  text-align: left;
 }
 
 .intro-section p {
@@ -292,6 +291,7 @@ img {
   color: var(--text-primary);
   max-width: none;
   margin: 0;
+  text-align: left;
 }
 
 /* ========================================
@@ -320,11 +320,11 @@ img {
 }
 
 .posts-section > .category-label {
-  text-align: left;
+  text-align: center;
 }
 
 .posts-section h2 {
-  text-align: left;
+  text-align: center;
   margin-bottom: var(--space-xl);
 }
 
@@ -386,10 +386,10 @@ img {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: var(--space-xl) var(--space-lg);
-  text-align: left;
 }
 
 .goals-section h2 {
+  text-align: center;
   margin-bottom: var(--space-md);
 }
 
@@ -399,6 +399,7 @@ img {
   line-height: 1.8;
   max-width: none;
   margin: 0;
+  text-align: left;
 }
 
 /* ========================================
@@ -412,7 +413,7 @@ img {
 }
 
 .about-section h2 {
-  text-align: left;
+  text-align: center;
   margin-bottom: var(--space-lg);
 }
 
@@ -450,18 +451,15 @@ img {
 
 .site-footer {
   padding: var(--space-xl) var(--space-lg);
-  text-align: left;
+  text-align: center;
   border-top: 1px solid var(--border-color);
   margin-top: var(--space-xl);
-  max-width: var(--content-width);
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .footer-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-sm);
 }
 
@@ -492,7 +490,7 @@ img {
 }
 
 .post-header {
-  text-align: left;
+  text-align: center;
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid var(--border-color);
@@ -583,7 +581,7 @@ img {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
   border-top: 1px solid var(--border-color);
-  text-align: left;
+  text-align: center;
 }
 
 .back-link {
@@ -646,7 +644,7 @@ img {
 
   .about-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: left;
   }
 
