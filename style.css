@@ -229,16 +229,15 @@ img {
    ======================================== */
 
 .hero {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   text-align: left;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: var(--space-xxl) var(--space-lg);
-  padding-top: calc(var(--space-xxl) + var(--header-height));
+  padding: var(--space-lg) var(--space-lg);
+  padding-top: calc(var(--space-xl) + var(--header-height));
 }
 
 .category-label {
@@ -633,8 +632,8 @@ img {
   }
 
   .hero {
-    padding: var(--space-xl) var(--space-md);
-    padding-top: calc(var(--space-xl) + var(--header-height));
+    padding: var(--space-lg) var(--space-md);
+    padding-top: calc(var(--space-lg) + var(--header-height));
   }
 
   .hero-quote {
