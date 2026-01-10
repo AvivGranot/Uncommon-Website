@@ -4,451 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uncommon People in a Common World</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-            color: #0056a3;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #003d7a;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #0056a3;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 10px 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 10px;
-            color: white;
-            border-radius: 12px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: #003d7a;
-        }
-
-        .hero {
-            background: linear-gradient(to bottom, #0056a3, #003d7a);
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px 60px;
-            clip-path: ellipse(120% 100% at 50% 0%);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #ffc107;
-            color: #333;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 20px;
-            font-size: 1.1rem;
-        }
-
-        .btn:hover {
-            background-color: #e0a800;
-            color: #fff;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            padding: 25px 35px;
-        }
-
-        .about-container {
-    text-align: center; /* Aligns text to the center */
-    max-width: 800px; /* Restricts width for readability */
-    margin: 0 auto; /* Centers the div horizontally */
-    padding: 20px; /* Adds spacing inside the container */
-    background-color: #f8f9fa; /* Optional: Adds a light background color */
-    border-radius: 10px; /* Optional: Rounds the corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
-
-#about-section h2 {
-    font-size: 2rem; /* Larger heading font size */
-    margin-bottom: 10px;
-    text-align: center; /* Aligns text to the center */
-
-}
-
-#about-section p {
-    font-size: 1.25rem; /* Adjust the paragraph font size */
-    margin: 0 auto; /* Centers the div horizontally */
-    padding: 20px; /* Adds spacing inside the container */
-    background-color: #f8f9fa; /* Optional: Adds a light background color */
-    border-radius: 10px; /* Optional: Rounds the corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
-}
-
-.image {
-    width: 100%; /* Ensures it scales proportionally */
-    max-width: 100%; /* No restriction on maximum width */
-    height: auto; /* Maintains aspect ratio */
-    margin: 0 auto; /* Center the image */
-    display: block; /* Makes it behave as a block element */
-}
-
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Full width */
-    min-height: 300px; /* Minimum height for smaller devices */
-    height: auto; /* Allow height to adjust dynamically */
-    padding: 1em;
-    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
-    background-size: contain; /* Fit the image without cropping */
-    background-position: center; /* Center the image perfectly */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-@media only screen and (max-width: 768px) {
-    section {
-        min-height: 260px; /* Decrease height on smaller screens */
-        padding: 0.75em;
-        background-size: contain; /* Keep full image visible on mobile */
-        background-position: center;
-        aspect-ratio: 16 / 9; /* Maintain consistent ratio on mobile */
-    }
-}
-
-        .blog-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .blog-list li {
-            margin-bottom: 20px;
-        }
-
-        .blog-list a {
-            font-size: 1.3rem;
-            color: white;
-        }
-
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            background-color: #0056a3;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 15px;
-            font-size: 1rem;
-        }
-
-        .read-more:hover {
-            background-color: #003d7a;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form input, form textarea, form button {
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 50px;
-            font-size: 1rem;
-        }
-
-        form button {
-            background-color: #0056a3;
-            color: #fff;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-        }
-
-        footer {
-            background-color: #0056a3;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
-
-        footer a {
-            color: #ffc107;
-        }
-
-        footer a:hover {
-            color: #e0a800;
-        }
-
-        /* Mobile Responsive Styles */
-        @media only screen and (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-                gap: 10px;
-                padding: 0 10px;
-            }
-
-            nav ul li a {
-                font-size: 0.9rem;
-                padding: 8px;
-            }
-
-            .hero {
-                padding: 80px 15px 40px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn {
-                padding: 12px 24px;
-                font-size: 1rem;
-            }
-
-            .container {
-                margin: 20px 15px;
-                padding: 20px;
-            }
-
-            #about-section h2 {
-                font-size: 1.5rem;
-            }
-
-            #about-section p {
-                font-size: 1rem;
-                padding: 15px;
-            }
-
-            .blog-list a {
-                font-size: 1.1rem;
-            }
-
-            .blog-list h3 {
-                font-size: 1.1rem;
-            }
-
-            .blog-list p {
-                font-size: 0.95rem;
-            }
-
-            .read-more {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
-
-            form input, form textarea, form button {
-                padding: 10px;
-                font-size: 0.95rem;
-            }
-        }
-
-        @media only screen and (max-width: 480px) {
-            nav ul {
-                gap: 5px;
-            }
-
-            nav ul li a {
-                font-size: 0.8rem;
-                padding: 6px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero p {
-                font-size: 0.9rem;
-            }
-
-            .container {
-                margin: 15px 10px;
-                padding: 15px;
-            }
-
-            #about-section h2 {
-                font-size: 1.3rem;
-            }
-
-            #about-section p {
-                font-size: 0.9rem;
-                padding: 10px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J80TV24BR8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-J80TV24BR8');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J80TV24BR8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J80TV24BR8');
+    </script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#Posts">Posts</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">My LinkedIn</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <button class="hamburger-menu" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
 
-    <div class="hero" id="home">
-        <h1>Uncommon People in a Common World</h1>
-        <p>“If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing” - Benjamin Franklin</p>
-        <a href="#about-section" class="btn">Why you should read this</a>
-    </div>
+        <a href="index.html" class="site-logo">Uncommon</a>
 
-    <div id="about-section">
-        <p>
-            In 2022, I experienced my most significant personal and professional growth, yet I felt it didn't mean a thing to the greater world. More importantly, it didn't create true value at scale. As I dived deeper into the concept of Commonness vs. Uncommonness, I realized something: while we perceive our lives as unique, we are actually far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible. How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity—especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!
-        </p>
-    </div>
-    
+        <nav class="nav-overlay" aria-hidden="true">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#posts">Posts</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="hero" id="home">
+            <span class="category-label">A Blog by Aviv Granot</span>
+            <h1>Uncommon People in a Common World</h1>
+            <p class="hero-quote">"If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing"</p>
+            <span class="hero-attribution">Benjamin Franklin</span>
+        </section>
 
-    <section class="hero-image" style="
-    text-align: center;
-    background: url('Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg') no-repeat center center;
-    background-size: cover;
-    margin: 2em auto;
-    max-width: 1100px;
-    width: calc(100% - 30px);
-    min-height: 500px;
-    padding: 4em 1em;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-</section>
+        <section class="intro-section">
+            <p>In 2022, I experienced my most significant personal and professional growth, yet I felt it didn't mean a thing to the greater world. More importantly, it didn't create true value at scale. As I dived deeper into the concept of Commonness vs. Uncommonness, I realized something: while we perceive our lives as unique, we are actually far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible. How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity, especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!</p>
+        </section>
 
-<style>
-    @media only screen and (max-width: 768px) {
-        .hero-image {
-            min-height: 250px !important;
-            padding: 2em 0.5em !important;
-            margin: 1em auto !important;
-            background-size: contain !important;
-        }
-    }
-    @media only screen and (max-width: 480px) {
-        .hero-image {
-            min-height: 180px !important;
-            padding: 1em 0.5em !important;
-        }
-    }
-</style>
+        <section class="image-section">
+            <img src="Assets/Images/think_different_martin_luther_king_john_lennon_steve_jobs_and_albert_einstein-t2.jpg" alt="Think Different - Martin Luther King, John Lennon, Steve Jobs, Albert Einstein">
+        </section>
 
+        <section class="posts-section" id="posts">
+            <span class="category-label">Essays</span>
+            <h2>Posts</h2>
 
+            <article class="post-card">
+                <span class="post-number">01</span>
+                <h3><a href="Assets/Posts/post1.html">Commonness VS. Uncommonness</a></h3>
+                <p class="post-excerpt">"God must have loved the common man, that he created so many of them"</p>
+                <span class="post-attribution">Abraham Lincoln</span>
+            </article>
 
+            <article class="post-card">
+                <span class="post-number">02</span>
+                <h3><a href="Assets/Posts/post2.html">Entrepreneurship VS. Uncommonness</a></h3>
+                <p class="post-excerpt">"Good steel can withstand any temperature"</p>
+                <span class="post-attribution">Empress Dowager T'zu-his</span>
+            </article>
 
-    <div class="container" id="Posts">
-        <h2>Posts</h2>
-        <ul class="blog-list">
-            <li>
-                <h3>Commonness VS. Uncommonness</h3>
-                <p>“God must have loved the common man, that he created so many of them” – Abraham Lincoln</p>
-                <a href="Assets/Posts/post1.html" class="read-more">Discover Uncommonness</a>
-            </li>
-            <li>
-                <h3>Entrepreneurship VS. Uncommonness</h3>
-                <p>“Good steel can withstand any temperature” - Empress Dowager T'zu-his; "Uncommon people withstand the test of time"</p>
-                <a href="Assets/Posts/post2.html" class="read-more">Explore Trends</a>
-            </li>
-            <li>
-                <h3>Definning Commonness</h3>
-                <p>A theoretic real life scenerio</p>
-                <a href="Assets/Posts/post3.html" class="read-more">Cameron's Pastry Shop</a>
-            </li>
-            <li>
-                <h3>Common Environments</h3>
-                <p>“Do not be afraid to give up the good to go for the best” – John D. Rockefeller</p>
-                <a href="Assets/Posts/post4.html" class="read-more">Discover in depth</a>
-            </li>
-        </ul>
-    </div>
+            <article class="post-card">
+                <span class="post-number">03</span>
+                <h3><a href="Assets/Posts/post3.html">Defining Commonness</a></h3>
+                <p class="post-excerpt">A theoretical real life scenario</p>
+                <span class="post-attribution">Cameron's Pastry Shop</span>
+            </article>
 
+            <article class="post-card">
+                <span class="post-number">04</span>
+                <h3><a href="Assets/Posts/post4.html">Common Environments</a></h3>
+                <p class="post-excerpt">"Do not be afraid to give up the good to go for the best"</p>
+                <span class="post-attribution">John D. Rockefeller</span>
+            </article>
+        </section>
 
-    <div class="container" id="Goals">
-        <h2>Goals</h2>
-        <p>By exploring this idea, I hope to plant more roots, more we can count, stronger than those that exist today. And in generations to come, these roots will grow into trees that yield goods for a healthier, more progressive, and peaceful world.</p>
-    </div>
+        <section class="goals-section" id="goals">
+            <h2>Goals</h2>
+            <p>By exploring this idea, I hope to plant more roots, more than we can count, stronger than those that exist today. And in generations to come, these roots will grow into trees that yield goods for a healthier, more progressive, and peaceful world.</p>
+        </section>
 
-    <div class="container" id="about">
-        <h2>About</h2>
-        <div style="display: flex; gap: 25px; align-items: flex-start; flex-wrap: wrap;">
-            <img src="Assets/Images/avivi_manhattan.jpeg" alt="Aviv in Manhattan" style="width: 250px; height: auto; border-radius: 10px; flex-shrink: 0;">
-            <p style="flex: 1; min-width: 280px; margin: 0;">Hi, I'm Aviv Granot. Professionally, I work as a GTM Specialist at Boom and co-founded Human Skills Club and View From The Top. My background includes service as a Special Forces combat soldier and hands on experience managing $20M+ real estate deals. I'm a big believer in high performers, a growth mindset, and operating with a strong sense of urgency.<br><br>Outside of work, I'm obsessed with biographies, committed to staying active, and have a very real weakness for milk chocolate. I'm drawn to unconventional experiences whether that's hitchhiking solo through the Alaskan wilderness or volunteering in the Faroe Islands because I prefer living like a local over just passing through.</p>
+        <section class="about-section" id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="Assets/Images/avivi_manhattan.jpeg" alt="Aviv in Manhattan">
+                </div>
+                <div class="about-text">
+                    <p>Hi, I'm Aviv Granot. Professionally, I work as a GTM Specialist at Boom and co-founded Human Skills Club and View From The Top. My background includes service as a Special Forces combat soldier and hands on experience managing $20M+ real estate deals. I'm a big believer in high performers, a growth mindset, and operating with a strong sense of urgency.<br><br>Outside of work, I'm obsessed with biographies, committed to staying active, and have a very real weakness for milk chocolate. I'm drawn to unconventional experiences whether that's hitchhiking solo through the Alaskan wilderness or volunteering in the Faroe Islands because I prefer living like a local over just passing through.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p class="footer-copyright">2026 Uncommon People in a Common World. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Contact on LinkedIn</a>
+            </nav>
         </div>
-    </div>
-
-    <footer>
-        <p>&copy;2026 Uncommon People in a Common World. All rights reserved. Unauthorized use, copying, or reproduction of this content is prohibited. <a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Contact Me</a></p>
     </footer>
+
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const navOverlay = document.querySelector('.nav-overlay');
+            const navLinks = document.querySelectorAll('.nav-list a');
+
+            hamburger.addEventListener('click', function() {
+                const isOpen = navOverlay.classList.toggle('is-open');
+                hamburger.classList.toggle('is-active');
+                navOverlay.setAttribute('aria-hidden', !isOpen);
+                hamburger.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navOverlay.classList.remove('is-open');
+                    hamburger.classList.remove('is-active');
+                    navOverlay.setAttribute('aria-hidden', 'true');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
