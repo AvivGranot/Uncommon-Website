@@ -301,7 +301,6 @@ img {
 
 .hero-attribution.attribution-visible {
   opacity: 1;
-  transition: opacity 0.5s ease-in;
 }
 
 /* Intro paragraph animation */

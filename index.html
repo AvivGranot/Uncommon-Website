@@ -142,10 +142,11 @@
                     this.aboutSection = document.querySelector('.about-section');
                     this.footer = document.querySelector('.site-footer');
                     this.typingSpeed = options.typingSpeed || 50;
-                    this.cursorBlinkDuration = 1500;
-                    this.attributionDelay = 300;
-                    this.introDelay = 500;
+                    this.attributionTypingSpeed = options.attributionTypingSpeed || 60;
                     this.hasAnimated = false;
+
+                    // Store original attribution text
+                    this.attributionText = this.attributionElement.textContent;
 
                     // Check for reduced motion preference
                     this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -157,9 +158,10 @@
                         return;
                     }
 
-                    // Store original text and clear element
+                    // Store original text and clear elements
                     this.originalText = this.quoteElement.getAttribute('data-text');
                     this.quoteElement.textContent = '';
+                    this.attributionElement.textContent = '';
 
                     // Set initial states
                     this.quoteElement.classList.add('typewriter-ready');
@@ -202,11 +204,9 @@
 
                 async startAnimation() {
                     await this.typeQuote();
-                    await this.delay(this.attributionDelay);
-                    await this.showAttribution();
-                    await this.delay(this.introDelay);
+                    await this.typeAttribution();
                     await this.flowInIntro();
-                    await this.delay(300);
+                    await this.delay(200);
                     await this.revealSections();
                 }
 
@@ -230,14 +230,9 @@
                                 index++;
                                 setTimeout(type, this.typingSpeed);
                             } else {
-                                // Typing complete - blink cursor then remove
-                                setTimeout(() => {
-                                    cursor.classList.add('cursor-fade');
-                                    setTimeout(() => {
-                                        cursor.remove();
-                                        resolve();
-                                    }, 500);
-                                }, this.cursorBlinkDuration);
+                                // Typing complete - remove cursor immediately and continue
+                                cursor.remove();
+                                resolve();
                             }
                         };
 
@@ -245,17 +240,42 @@
                     });
                 }
 
-                showAttribution() {
+                typeAttribution() {
                     return new Promise((resolve) => {
+                        const text = this.attributionText;
+                        let index = 0;
+
+                        // Make attribution visible (but empty)
                         this.attributionElement.classList.add('attribution-visible');
-                        setTimeout(resolve, 500);
+
+                        // Create cursor element
+                        const cursor = document.createElement('span');
+                        cursor.className = 'typewriter-cursor';
+                        cursor.textContent = '|';
+                        this.attributionElement.appendChild(cursor);
+
+                        const type = () => {
+                            if (index < text.length) {
+                                cursor.remove();
+                                this.attributionElement.textContent = text.substring(0, index + 1);
+                                this.attributionElement.appendChild(cursor);
+                                index++;
+                                setTimeout(type, this.attributionTypingSpeed);
+                            } else {
+                                // Typing complete - remove cursor and continue
+                                cursor.remove();
+                                resolve();
+                            }
+                        };
+
+                        type();
                     });
                 }
 
                 flowInIntro() {
                     return new Promise((resolve) => {
                         this.introElement.classList.add('intro-visible');
-                        setTimeout(resolve, 800);
+                        setTimeout(resolve, 100);
                     });
                 }
 
