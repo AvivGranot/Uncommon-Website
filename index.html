@@ -25,9 +25,10 @@
         <a href="index.html" class="site-logo">Uncommon</a>
 
         <nav class="nav-overlay" aria-hidden="true">
+            <button class="nav-close" aria-label="Close navigation">&times;</button>
             <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#posts">Posts</a></li>
+                <li><a href="#posts">Essays</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">LinkedIn</a></li>
             </ul>
@@ -58,23 +59,23 @@
 
             <article class="post-card">
                 <span class="post-number">02</span>
+                <h3><a href="Assets/Posts/post4.html">Common Environments</a></h3>
+                <p class="post-excerpt">"Do not be afraid to give up the good to go for the best"</p>
+                <span class="post-attribution">John D. Rockefeller</span>
+            </article>
+
+            <article class="post-card">
+                <span class="post-number">03</span>
                 <h3><a href="Assets/Posts/post2.html">Entrepreneurship VS. Uncommonness</a></h3>
                 <p class="post-excerpt">"Good steel can withstand any temperature"</p>
                 <span class="post-attribution">Empress Dowager T'zu-his</span>
             </article>
 
             <article class="post-card">
-                <span class="post-number">03</span>
+                <span class="post-number">04</span>
                 <h3><a href="Assets/Posts/post3.html">Defining Commonness</a></h3>
                 <p class="post-excerpt">A theoretical real life scenario</p>
                 <span class="post-attribution">Cameron's Pastry Shop</span>
-            </article>
-
-            <article class="post-card">
-                <span class="post-number">04</span>
-                <h3><a href="Assets/Posts/post4.html">Common Environments</a></h3>
-                <p class="post-excerpt">"Do not be afraid to give up the good to go for the best"</p>
-                <span class="post-attribution">John D. Rockefeller</span>
             </article>
         </section>
 
@@ -110,7 +111,16 @@
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger-menu');
             const navOverlay = document.querySelector('.nav-overlay');
+            const navClose = document.querySelector('.nav-close');
             const navLinks = document.querySelectorAll('.nav-list a');
+
+            function closeNav() {
+                navOverlay.classList.remove('is-open');
+                hamburger.classList.remove('is-active');
+                navOverlay.setAttribute('aria-hidden', 'true');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
 
             hamburger.addEventListener('click', function() {
                 const isOpen = navOverlay.classList.toggle('is-open');
@@ -120,14 +130,10 @@
                 document.body.style.overflow = isOpen ? 'hidden' : '';
             });
 
+            navClose.addEventListener('click', closeNav);
+
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navOverlay.classList.remove('is-open');
-                    hamburger.classList.remove('is-active');
-                    navOverlay.setAttribute('aria-hidden', 'true');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                });
+                link.addEventListener('click', closeNav);
             });
 
             // Hero Animation Controller

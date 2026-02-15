@@ -192,6 +192,24 @@ img {
   visibility: visible;
 }
 
+.nav-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-lg);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: var(--space-xs);
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.nav-close:hover {
+  opacity: 0.5;
+}
+
 .nav-list {
   text-align: center;
 }
@@ -711,6 +729,10 @@ body.animation-in-progress {
 
   .hamburger-menu {
     left: var(--space-md);
+  }
+
+  .nav-close {
+    right: var(--space-md);
   }
 
   .site-logo {
