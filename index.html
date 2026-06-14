@@ -44,6 +44,7 @@
         </section>
 
         <section class="intro-section">
+            <h2 class="intro-title">Foundation</h2>
             <p class="intro-paragraph">2022 was a pivotal year for me: I experienced a meteor jump professionally, yet something wasn't clicking. By 2023, I understood that nothing I'd created truly helped the greater world. I later discovered the theory of Commonness vs. Uncommonness; I fathomed how we perceive our lives as unique, while actually, we are far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible: How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity, especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!</p>
         </section>
 
@@ -51,17 +52,17 @@
             <span class="category-label">Essays</span>
 
             <article class="post-card">
-                <span class="post-number">01</span>
-                <h3><a href="Assets/Posts/post1.html">Commonness VS. Uncommonness</a></h3>
-                <p class="post-excerpt">"God must have loved the common man, that he created so many of them"</p>
-                <span class="post-attribution">Abraham Lincoln</span>
+                <span class="post-number">05</span>
+                <h3><a href="Assets/Posts/post5.html">Black Swans Vs. Uncommon People</a></h3>
+                <p class="post-excerpt">"Invest in preparedness, not in prediction"</p>
+                <span class="post-attribution">Nassim Nicholas Taleb</span>
             </article>
 
             <article class="post-card">
-                <span class="post-number">02</span>
-                <h3><a href="Assets/Posts/post4.html">Common Environments</a></h3>
-                <p class="post-excerpt">"Do not be afraid to give up the good to go for the best"</p>
-                <span class="post-attribution">John D. Rockefeller</span>
+                <span class="post-number">04</span>
+                <h3><a href="Assets/Posts/post2.html">Entrepreneurship VS. Uncommonness</a></h3>
+                <p class="post-excerpt">"Good steel can withstand any temperature"</p>
+                <span class="post-attribution">Empress Dowager T'zu-his</span>
             </article>
 
             <article class="post-card">
@@ -72,10 +73,17 @@
             </article>
 
             <article class="post-card">
-                <span class="post-number">04</span>
-                <h3><a href="Assets/Posts/post2.html">Entrepreneurship VS. Uncommonness</a></h3>
-                <p class="post-excerpt">"Good steel can withstand any temperature"</p>
-                <span class="post-attribution">Empress Dowager T'zu-his</span>
+                <span class="post-number">02</span>
+                <h3><a href="Assets/Posts/post4.html">Common Environments</a></h3>
+                <p class="post-excerpt">"Do not be afraid to give up the good to go for the best"</p>
+                <span class="post-attribution">John D. Rockefeller</span>
+            </article>
+
+            <article class="post-card">
+                <span class="post-number">01</span>
+                <h3><a href="Assets/Posts/post1.html">Commonness VS. Uncommonness</a></h3>
+                <p class="post-excerpt">"God must have loved the common man, that he created so many of them"</p>
+                <span class="post-attribution">Abraham Lincoln</span>
             </article>
         </section>
 
@@ -142,6 +150,7 @@
                     this.quoteElement = document.querySelector('.hero-quote');
                     this.attributionElement = document.querySelector('.hero-attribution');
                     this.introElement = document.querySelector('.intro-paragraph');
+                    this.introTitle = document.querySelector('.intro-title');
                     this.postsSection = document.querySelector('.posts-section');
                     this.goalsSection = document.querySelector('.goals-section');
                     this.aboutSection = document.querySelector('.about-section');
@@ -158,7 +167,7 @@
                 }
 
                 init() {
-                    if (this.prefersReducedMotion) {
+                    if (this.prefersReducedMotion || localStorage.getItem('heroAnimationPlayed')) {
                         this.showAllImmediately();
                         return;
                     }
@@ -172,6 +181,7 @@
                     this.quoteElement.classList.add('typewriter-ready');
                     this.attributionElement.classList.add('attribution-hidden');
                     this.introElement.classList.add('intro-hidden');
+                    this.introTitle.classList.add('intro-hidden');
 
                     // Hide following sections
                     this.postsSection.classList.add('section-hidden');
@@ -199,6 +209,7 @@
                     const text = this.quoteElement.getAttribute('data-text');
                     this.quoteElement.textContent = text;
                     this.attributionElement.classList.add('attribution-visible');
+                    this.introTitle.classList.add('intro-visible');
                     this.introElement.classList.add('intro-visible');
                     // Show all sections immediately
                     this.postsSection.classList.add('section-visible');
@@ -208,6 +219,7 @@
                 }
 
                 async startAnimation() {
+                    localStorage.setItem('heroAnimationPlayed', 'true');
                     await this.typeQuote();
                     await this.typeAttribution();
                     await this.flowInIntro();
@@ -279,6 +291,7 @@
 
                 flowInIntro() {
                     return new Promise((resolve) => {
+                        this.introTitle.classList.add('intro-visible');
                         this.introElement.classList.add('intro-visible');
                         setTimeout(resolve, 100);
                     });

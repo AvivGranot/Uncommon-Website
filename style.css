@@ -333,6 +333,23 @@ img {
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.intro-title {
+  font-family: var(--font-heading);
+  text-align: center;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.intro-title.intro-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.intro-title.intro-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
 /* Section reveal animation */
 .section-hidden {
   opacity: 0;
