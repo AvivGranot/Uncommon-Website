@@ -160,7 +160,12 @@
             navClose.addEventListener('click', closeNav);
 
             navLinks.forEach(link => {
-                link.addEventListener('click', closeNav);
+                link.addEventListener('click', function() {
+                    // Skip the hero animation so the user never waits to reach
+                    // the section/essay they navigated to.
+                    animator.skipToEnd();
+                    closeNav();
+                });
             });
 
             // Hero Animation Controller
@@ -177,6 +182,7 @@
                     this.typingSpeed = options.typingSpeed || 50;
                     this.attributionTypingSpeed = options.attributionTypingSpeed || 60;
                     this.hasAnimated = false;
+                    this.cancelled = false;
 
                     // Store original attribution text
                     this.attributionText = this.attributionElement.textContent;
@@ -186,7 +192,7 @@
                 }
 
                 init() {
-                    if (this.prefersReducedMotion || localStorage.getItem('heroAnimationPlayed')) {
+                    if (this.prefersReducedMotion || sessionStorage.getItem('heroAnimationPlayed')) {
                         this.showAllImmediately();
                         return;
                     }
@@ -237,8 +243,17 @@
                     this.footer.classList.add('section-visible');
                 }
 
+                // Instantly finish the animation so navigation is never blocked.
+                skipToEnd() {
+                    if (this.cancelled) return;
+                    this.cancelled = true;
+                    sessionStorage.setItem('heroAnimationPlayed', 'true');
+                    document.body.classList.remove('animation-in-progress');
+                    this.showAllImmediately();
+                }
+
                 async startAnimation() {
-                    localStorage.setItem('heroAnimationPlayed', 'true');
+                    sessionStorage.setItem('heroAnimationPlayed', 'true');
                     await this.typeQuote();
                     await this.typeAttribution();
                     await this.flowInIntro();
@@ -258,6 +273,7 @@
                         this.quoteElement.appendChild(cursor);
 
                         const type = () => {
+                            if (this.cancelled) { cursor.remove(); resolve(); return; }
                             if (index < text.length) {
                                 // Remove cursor, update text, re-add cursor
                                 cursor.remove();
@@ -291,6 +307,7 @@
                         this.attributionElement.appendChild(cursor);
 
                         const type = () => {
+                            if (this.cancelled) { cursor.remove(); resolve(); return; }
                             if (index < text.length) {
                                 cursor.remove();
                                 this.attributionElement.textContent = text.substring(0, index + 1);
