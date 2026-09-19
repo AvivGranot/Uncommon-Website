@@ -268,8 +268,11 @@
                 }
 
                 init() {
-                    // Arriving at a section (e.g. #posts from an essay): show it right away
-                    if (this.prefersReducedMotion || location.hash) {
+                    // The typewriter plays once per visit. Coming back (from an essay,
+                    // a refresh) or arriving at a section (#posts) shows everything at once.
+                    const alreadyPlayed = sessionStorage.getItem('heroAnimationPlayed');
+                    sessionStorage.setItem('heroAnimationPlayed', 'true');
+                    if (this.prefersReducedMotion || location.hash || alreadyPlayed) {
                         this.showAllImmediately();
                         return;
                     }
