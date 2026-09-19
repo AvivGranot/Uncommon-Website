@@ -305,6 +305,8 @@
                     // For users who prefer reduced motion
                     const text = this.quoteElement.getAttribute('data-text');
                     this.quoteElement.textContent = text;
+                    // Restore the attribution in case typing was cut short
+                    this.attributionElement.textContent = this.attributionText;
                     this.attributionElement.classList.add('attribution-visible');
                     // Show all sections immediately
                     this.postsSection.classList.add('section-visible');
