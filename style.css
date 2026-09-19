@@ -170,6 +170,25 @@ img {
   opacity: 1;
 }
 
+/* Essay pages: return arrow, top right, level with the hamburger.
+   Sits above the open menu so it also replaces "Home" there. */
+.back-arrow {
+  position: absolute;
+  right: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -2px;
+  color: var(--text-primary);
+  z-index: 1000;
+}
+
+.back-arrow svg {
+  display: block;
+}
+
 /* Navigation Overlay */
 .nav-overlay {
   position: fixed;
@@ -580,6 +599,13 @@ body.animation-in-progress {
   margin-top: var(--space-xl);
 }
 
+/* Essay pages: no divider above the footer, same gap as the homepage */
+.post-article + .site-footer {
+  border-top: none;
+  margin-top: 0;
+  padding: var(--space-lg);
+}
+
 .footer-content {
   display: flex;
   flex-direction: column;
@@ -746,6 +772,10 @@ body.animation-in-progress {
 
   .hamburger-menu {
     left: var(--space-md);
+  }
+
+  .back-arrow {
+    right: var(--space-md);
   }
 
   .nav-close {

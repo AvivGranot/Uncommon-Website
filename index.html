@@ -268,7 +268,8 @@
                 }
 
                 init() {
-                    if (this.prefersReducedMotion) {
+                    // Arriving at a section (e.g. #posts from an essay): show it right away
+                    if (this.prefersReducedMotion || location.hash) {
                         this.showAllImmediately();
                         return;
                     }
