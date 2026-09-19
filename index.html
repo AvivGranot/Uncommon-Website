@@ -25,6 +25,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="books.css">
+    <script src="books.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J80TV24BR8"></script>
     <script>
@@ -47,24 +49,118 @@
             <button class="nav-close" aria-label="Close navigation">&times;</button>
             <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#reading-list">Reading List</a></li>
                 <li><a href="#posts">Essays</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Connect</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero" id="home">
-            <span class="category-label">A Series Of Essays By <a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Aviv Granot</a></span>
             <h1>Uncommon People in a Common World</h1>
             <p class="hero-quote" data-text="&quot;If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing&quot;">"If you would not be forgotten, as soon as you are dead and rotten, either write things worth reading, or do things worth writing"</p>
             <span class="hero-attribution">Benjamin Franklin</span>
-        </section>
 
-        <section class="intro-section">
-            <h2 class="intro-title">Foundation</h2>
-            <p class="intro-paragraph">2022 was a pivotal year for me: I experienced a meteor jump professionally, yet something wasn't clicking. By 2023, I understood that nothing I'd created truly helped the greater world. I later discovered the theory of Commonness vs. Uncommonness; I fathomed how we perceive our lives as unique, while actually, we are far more common than uncommon. We are rarely taught to think differently or to expand our purpose beyond what we believe is possible: How can we aspire to be the next 'Da Vinci,' or at least aim for that kind of legacy? And why must we refuse to compromise on mediocrity, especially when our environment encourages it? After many conversations with friends, mentors, and peers, I was encouraged to finally put these thoughts into words. I hope they weren't wrong. Enjoy the ride!</p>
+            <div class="reading-list" id="reading-list">
+                <span class="category-label">Reading List</span>
+                <ol class="rl-list">
+                    <li class="rl-item"><span class="rl-num">01</span><cite class="rl-book">Moonwalking with Einstein</cite><span class="rl-by">Joshua Foer</span></li>
+                    <li class="rl-item"><span class="rl-num">02</span><cite class="rl-book">The Republic</cite><span class="rl-by">Plato</span></li>
+                    <li class="rl-item"><span class="rl-num">03</span><cite class="rl-book">Lincoln</cite><span class="rl-by">David Herbert Donald</span></li>
+                    <li class="rl-item"><span class="rl-num">04</span><cite class="rl-book">The Singularity Is Near</cite><span class="rl-by">Ray Kurzweil</span></li>
+                    <li class="rl-item"><span class="rl-num">05</span><cite class="rl-book">Titan: The Life of John D. Rockefeller, Sr.</cite><span class="rl-by">Ron Chernow</span></li>
+                    <li class="rl-item"><span class="rl-num">06</span><cite class="rl-book">Poor Charlie's Almanack</cite><span class="rl-by">Charles T. Munger (ed. Peter D. Kaufman)</span></li>
+                    <li class="rl-item"><span class="rl-num">07</span><cite class="rl-book">Poor Richard's Almanack</cite><span class="rl-by">Benjamin Franklin</span></li>
+                    <li class="rl-item"><span class="rl-num">08</span><cite class="rl-book">Washington: A Life</cite><span class="rl-by">Ron Chernow</span></li>
+                    <li class="rl-item"><span class="rl-num">09</span><cite class="rl-book">FDR</cite><span class="rl-by">Jean Edward Smith</span></li>
+                    <li class="rl-item"><span class="rl-num">10</span><cite class="rl-book">An Unfinished Life: John F. Kennedy</cite><span class="rl-by">Robert Dallek</span></li>
+                    <li class="rl-item"><span class="rl-num">11</span><cite class="rl-book">Thomas Jefferson: The Art of Power</cite><span class="rl-by">Jon Meacham</span></li>
+                    <li class="rl-item"><span class="rl-num">12</span><cite class="rl-book">Zero to One</cite><span class="rl-by">Peter Thiel (with Blake Masters)</span></li>
+                    <li class="rl-item"><span class="rl-num">13</span><cite class="rl-book">Steve Jobs</cite><span class="rl-by">Walter Isaacson</span></li>
+                    <li class="rl-item"><span class="rl-num">14</span><cite class="rl-book">Elon Musk</cite><span class="rl-by">Walter Isaacson</span></li>
+                    <li class="rl-item"><span class="rl-num">15</span><cite class="rl-book">Am I Being Too Subtle?</cite><span class="rl-by">Sam Zell</span></li>
+                    <li class="rl-item"><span class="rl-num">16</span><cite class="rl-book">Why Nations Fail</cite><span class="rl-by">Daron Acemoglu &amp; James A. Robinson</span></li>
+                    <li class="rl-item"><span class="rl-num">17</span><cite class="rl-book">Antifragile</cite><span class="rl-by">Nassim Nicholas Taleb</span></li>
+                    <li class="rl-item"><span class="rl-num">18</span><cite class="rl-book">Beyond Entrepreneurship</cite><span class="rl-by">Jim Collins &amp; William C. Lazier</span></li>
+                    <li class="rl-item"><span class="rl-num">19</span><cite class="rl-book">The Big Score</cite><span class="rl-by">Michael S. Malone</span></li>
+                    <li class="rl-item"><span class="rl-num">20</span><cite class="rl-book">Getting to Yes</cite><span class="rl-by">Roger Fisher &amp; William Ury</span></li>
+                    <li class="rl-item"><span class="rl-num">21</span><cite class="rl-book">Common Stocks and Uncommon Profits</cite><span class="rl-by">Philip A. Fisher</span></li>
+                    <li class="rl-item"><span class="rl-num">22</span><cite class="rl-book">Getting Past No</cite><span class="rl-by">William Ury</span></li>
+                    <li class="rl-item"><span class="rl-num">23</span><cite class="rl-book">The Invention of Nature</cite><span class="rl-by">Andrea Wulf</span></li>
+                    <li class="rl-item"><span class="rl-num">24</span><cite class="rl-book">The Odyssey</cite><span class="rl-by">Homer</span></li>
+                    <li class="rl-item"><span class="rl-num">25</span><cite class="rl-book">Leonardo da Vinci</cite><span class="rl-by">Walter Isaacson</span></li>
+                    <li class="rl-item"><span class="rl-num">26</span><cite class="rl-book">The River of Doubt: Theodore Roosevelt's Darkest Journey</cite><span class="rl-by">Candice Millard</span></li>
+                    <li class="rl-item"><span class="rl-num">27</span><cite class="rl-book">Genghis Khan</cite><span class="rl-by">Jack Weatherford</span></li>
+                    <li class="rl-item"><span class="rl-num">28</span><cite class="rl-book">Mindset</cite><span class="rl-by">Carol S. Dweck</span></li>
+                    <li class="rl-item"><span class="rl-num">29</span><cite class="rl-book">The Innovator's Dilemma</cite><span class="rl-by">Clayton M. Christensen</span></li>
+                    <li class="rl-item"><span class="rl-num">30</span><cite class="rl-book">The Only Way to Win</cite><span class="rl-by">Jim Loehr</span></li>
+                    <li class="rl-item"><span class="rl-num">31</span><cite class="rl-book">How Innovation Works</cite><span class="rl-by">Matt Ridley</span></li>
+                    <li class="rl-item"><span class="rl-num">32</span><cite class="rl-book">Pathways to Success</cite><span class="rl-by">Dale Carnegie</span></li>
+                    <li class="rl-item"><span class="rl-num">33</span><cite class="rl-book">Winning</cite><span class="rl-by">Jack Welch (with Suzy Welch)</span></li>
+                    <li class="rl-item"><span class="rl-num">34</span><cite class="rl-book">The Wheels of Commerce</cite><span class="rl-by">Fernand Braudel</span></li>
+                    <li class="rl-item"><span class="rl-num">35</span><cite class="rl-book">The Perspective of the World</cite><span class="rl-by">Fernand Braudel</span></li>
+                    <li class="rl-item"><span class="rl-num">36</span><cite class="rl-book">The Structures of Everyday Life</cite><span class="rl-by">Fernand Braudel</span></li>
+                    <li class="rl-item"><span class="rl-num">37</span><cite class="rl-book">The Hero with a Thousand Faces</cite><span class="rl-by">Joseph Campbell</span></li>
+                    <li class="rl-item"><span class="rl-num">38</span><cite class="rl-book">The Philosophy Book</cite><span class="rl-by">Will Buckingham et al.</span></li>
+                    <li class="rl-item"><span class="rl-num">39</span><cite class="rl-book">Built to Last</cite><span class="rl-by">Jim Collins &amp; Jerry I. Porras</span></li>
+                    <li class="rl-item"><span class="rl-num">40</span><cite class="rl-book">The Outsiders</cite><span class="rl-by">William N. Thorndike, Jr.</span></li>
+                    <li class="rl-item"><span class="rl-num">41</span><cite class="rl-book">Autobiography of Benjamin Franklin</cite><span class="rl-by">Benjamin Franklin</span></li>
+                    <li class="rl-item"><span class="rl-num">42</span><cite class="rl-book">Leaders Eat Last</cite><span class="rl-by">Simon Sinek</span></li>
+                    <li class="rl-item"><span class="rl-num">43</span><cite class="rl-book">Discover Your True North</cite><span class="rl-by">Bill George</span></li>
+                    <li class="rl-item"><span class="rl-num">44</span><cite class="rl-book">Atomic Habits</cite><span class="rl-by">James Clear</span></li>
+                    <li class="rl-item"><span class="rl-num">45</span><cite class="rl-book">American Colossus</cite><span class="rl-by">H. W. Brands</span></li>
+                    <li class="rl-item"><span class="rl-num">46</span><cite class="rl-book">Crossing the Chasm</cite><span class="rl-by">Geoffrey A. Moore</span></li>
+                    <li class="rl-item"><span class="rl-num">47</span><cite class="rl-book">Quit</cite><span class="rl-by">Annie Duke</span></li>
+                    <li class="rl-item"><span class="rl-num">48</span><cite class="rl-book">Debt: The First 5,000 Years</cite><span class="rl-by">David Graeber</span></li>
+                    <li class="rl-item"><span class="rl-num">49</span><cite class="rl-book">The Fountainhead</cite><span class="rl-by">Ayn Rand</span></li>
+                    <li class="rl-item"><span class="rl-num">50</span><cite class="rl-book">Electric Universe</cite><span class="rl-by">David Bodanis</span></li>
+                    <li class="rl-item"><span class="rl-num">51</span><cite class="rl-book">Principles</cite><span class="rl-by">Ray Dalio</span></li>
+                    <li class="rl-item"><span class="rl-num">52</span><cite class="rl-book">A Brief History of Time</cite><span class="rl-by">Stephen Hawking</span></li>
+                    <li class="rl-item"><span class="rl-num">53</span><cite class="rl-book">Switch</cite><span class="rl-by">Chip Heath &amp; Dan Heath</span></li>
+                    <li class="rl-item"><span class="rl-num">54</span><cite class="rl-book">Why Beethoven</cite><span class="rl-by">Norman Lebrecht</span></li>
+                    <li class="rl-item"><span class="rl-num">55</span><cite class="rl-book">Astrophysics for People in a Hurry</cite><span class="rl-by">Neil deGrasse Tyson</span></li>
+                    <li class="rl-item"><span class="rl-num">56</span><cite class="rl-book">The Company of Strangers</cite><span class="rl-by">Paul Seabright</span></li>
+                    <li class="rl-item"><span class="rl-num">57</span><cite class="rl-book">The Society of Mind</cite><span class="rl-by">Marvin Minsky</span></li>
+                    <li class="rl-item"><span class="rl-num">58</span><cite class="rl-book">Into the Wild</cite><span class="rl-by">Jon Krakauer</span></li>
+                    <li class="rl-item"><span class="rl-num">59</span><cite class="rl-book">The Power of Now</cite><span class="rl-by">Eckhart Tolle</span></li>
+                    <li class="rl-item"><span class="rl-num">60</span><cite class="rl-book">Meditations on First Philosophy</cite><span class="rl-by">René Descartes</span></li>
+                    <li class="rl-item"><span class="rl-num">61</span><cite class="rl-book">A New Earth</cite><span class="rl-by">Eckhart Tolle</span></li>
+                    <li class="rl-item"><span class="rl-num">62</span><cite class="rl-book">Thinking, Fast and Slow</cite><span class="rl-by">Daniel Kahneman</span></li>
+                    <li class="rl-item"><span class="rl-num">63</span><cite class="rl-book">The Lunar Men</cite><span class="rl-by">Jenny Uglow</span></li>
+                    <li class="rl-item"><span class="rl-num">64</span><cite class="rl-book">Start with Why</cite><span class="rl-by">Simon Sinek</span></li>
+                    <li class="rl-item"><span class="rl-num">65</span><cite class="rl-book">The 10 Laws of Trust</cite><span class="rl-by">Joel Peterson (with David A. Kaplan)</span></li>
+                    <li class="rl-item"><span class="rl-num">66</span><cite class="rl-book">Together Is Better</cite><span class="rl-by">Simon Sinek</span></li>
+                    <li class="rl-item"><span class="rl-num">67</span><cite class="rl-book">The Only Constant</cite><span class="rl-by">Yoav Blum</span></li>
+                    <li class="rl-item"><span class="rl-num">68</span><cite class="rl-book">The Kaizen Way</cite><span class="rl-by">Robert Maurer</span></li>
+                    <li class="rl-item"><span class="rl-num">69</span><cite class="rl-book">Economics: An Introductory Analysis</cite><span class="rl-by">Paul A. Samuelson</span></li>
+                    <li class="rl-item"><span class="rl-num">70</span><cite class="rl-book">Through a Window</cite><span class="rl-by">Jane Goodall</span></li>
+                    <li class="rl-item"><span class="rl-num">71</span><cite class="rl-book">Gentleman Overboard</cite><span class="rl-by">Herbert Clyde Lewis</span></li>
+                    <li class="rl-item"><span class="rl-num">72</span><cite class="rl-book">Rich Dad Poor Dad</cite><span class="rl-by">Robert T. Kiyosaki</span></li>
+                    <li class="rl-item"><span class="rl-num">73</span><cite class="rl-book">River of Truth</cite><span class="rl-by">Yossi the Storyteller (Yosef HaMesaper / Joseph Sela)</span></li>
+                    <li class="rl-item"><span class="rl-num">74</span><cite class="rl-book">The Blue Sweater</cite><span class="rl-by">Jacqueline Novogratz</span></li>
+                    <li class="rl-item"><span class="rl-num">75</span><cite class="rl-book">A History of Civilizations</cite><span class="rl-by">Fernand Braudel</span></li>
+                    <li class="rl-item"><span class="rl-num">76</span><cite class="rl-book">The Clouds</cite><span class="rl-by">Aristophanes</span></li>
+                    <li class="rl-item"><span class="rl-num">77</span><cite class="rl-book">The World Until Yesterday</cite><span class="rl-by">Jared Diamond</span></li>
+                    <li class="rl-item"><span class="rl-num">78</span><cite class="rl-book">Back from Tuichi</cite><span class="rl-by">Yossi Ghinsberg</span></li>
+                    <li class="rl-item"><span class="rl-num">79</span><cite class="rl-book">Can't Hurt Me</cite><span class="rl-by">David Goggins</span></li>
+                    <li class="rl-item"><span class="rl-num">80</span><cite class="rl-book">How to Make a Few Billion Dollars</cite><span class="rl-by">Brad Jacobs</span></li>
+                    <li class="rl-item"><span class="rl-num">81</span><cite class="rl-book">How to Make a Few More Billion Dollars</cite><span class="rl-by">Brad Jacobs</span></li>
+                    <li class="rl-item"><span class="rl-num">82</span><cite class="rl-book">The Design of Everyday Things</cite><span class="rl-by">Don Norman</span></li>
+                    <li class="rl-item"><span class="rl-num">83</span><cite class="rl-book">Obviously Awesome</cite><span class="rl-by">April Dunford</span></li>
+                    <li class="rl-item"><span class="rl-num">84</span><cite class="rl-book">Made in America</cite><span class="rl-by">Sam Walton</span></li>
+                    <li class="rl-item"><span class="rl-num">85</span><cite class="rl-book">Made in Japan</cite><span class="rl-by">Akio Morita</span></li>
+                    <li class="rl-item"><span class="rl-num">86</span><cite class="rl-book">Papillon</cite><span class="rl-by">Henri Charrière</span></li>
+                    <li class="rl-item"><span class="rl-num">87</span><cite class="rl-book">The Black Swan</cite><span class="rl-by">Nassim Nicholas Taleb</span></li>
+                    <li class="rl-item"><span class="rl-num">88</span><cite class="rl-book">South</cite><span class="rl-by">Sir Ernest Shackleton</span></li>
+                    <li class="rl-item"><span class="rl-num">89</span><cite class="rl-book">The Hard Thing About Hard Things</cite><span class="rl-by">Ben Horowitz</span></li>
+                    <li class="rl-item"><span class="rl-num">90</span><cite class="rl-book">Liar's Poker</cite><span class="rl-by">Michael Lewis</span></li>
+                    <li class="rl-item"><span class="rl-num">91</span><cite class="rl-book">The Laws of Human Nature</cite><span class="rl-by">Robert Greene</span></li>
+                    <li class="rl-item"><span class="rl-num">92</span><cite class="rl-book">Wu</cite><span class="rl-by">Jonathan Clements</span></li>
+                    <li class="rl-item"><span class="rl-num">93</span><cite class="rl-book">The Art of Rhetoric</cite><span class="rl-by">Aristotle</span></li>
+                </ol>
+                <button type="button" class="rl-toggle" aria-expanded="false" hidden>Show all books</button>
+            </div>
         </section>
 
         <section class="posts-section" id="posts">
@@ -106,30 +202,11 @@
             </article>
         </section>
 
-        <section class="goals-section" id="goals">
-            <h2>Goals</h2>
-            <p>By exploring this idea, I hope to plant more roots, more than we can count, stronger than those that exist today. And in generations to come, these roots will grow into trees that yield goods for a healthier, more progressive, and peaceful world.</p>
-        </section>
-
-        <section class="about-section" id="about">
-            <h2>About</h2>
-            <div class="about-content">
-                <div class="about-image">
-                    <img src="Assets/Images/avivi_manhattan.jpeg" alt="Aviv in Manhattan">
-                </div>
-                <div class="about-text">
-                    <p>Hey, my name is Aviv Granot. Founder of oppura.io and co-founder of the Human Skills Club and View From The Top.<br><br>I grew up in my family's carpentry manufacturing house — building things is the oldest instinct I have. By 25, I built from zero a $250M sales pipeline by creating trust with both landlords and developers, served as a Special Forces combat fighter, and walked away from it all to build something that mattered a lot more (for me at least).<br><br>Outside of work, I'm obsessed with biographies, committed to staying active, and have a very real weakness for milk chocolate. I'm drawn to unconventional experiences whether that's hitchhiking solo through the Alaskan wilderness or volunteering in the Faroe Islands. I prefer living like a local over just passing through.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
             <p class="footer-copyright">2026 Uncommon People in a Common World. All rights reserved.</p>
-            <nav class="footer-links">
-                <a href="https://www.linkedin.com/in/aviv-granot/" target="_blank">Contact on LinkedIn</a>
-            </nav>
         </div>
     </footer>
 
@@ -173,12 +250,11 @@
                 constructor(options = {}) {
                     this.quoteElement = document.querySelector('.hero-quote');
                     this.attributionElement = document.querySelector('.hero-attribution');
-                    this.introElement = document.querySelector('.intro-paragraph');
-                    this.introTitle = document.querySelector('.intro-title');
                     this.postsSection = document.querySelector('.posts-section');
-                    this.goalsSection = document.querySelector('.goals-section');
-                    this.aboutSection = document.querySelector('.about-section');
                     this.footer = document.querySelector('.site-footer');
+                    this.readingList = window.ReadingList
+                        ? window.ReadingList.mount(document.querySelector('.reading-list'))
+                        : null;
                     this.typingSpeed = options.typingSpeed || 50;
                     this.attributionTypingSpeed = options.attributionTypingSpeed || 60;
                     this.hasAnimated = false;
@@ -192,7 +268,7 @@
                 }
 
                 init() {
-                    if (this.prefersReducedMotion || sessionStorage.getItem('heroAnimationPlayed')) {
+                    if (this.prefersReducedMotion) {
                         this.showAllImmediately();
                         return;
                     }
@@ -205,13 +281,9 @@
                     // Set initial states
                     this.quoteElement.classList.add('typewriter-ready');
                     this.attributionElement.classList.add('attribution-hidden');
-                    this.introElement.classList.add('intro-hidden');
-                    this.introTitle.classList.add('intro-hidden');
 
                     // Hide following sections
                     this.postsSection.classList.add('section-hidden');
-                    this.goalsSection.classList.add('section-hidden');
-                    this.aboutSection.classList.add('section-hidden');
                     this.footer.classList.add('section-hidden');
 
                     // Prevent scrolling during animation
@@ -234,29 +306,24 @@
                     const text = this.quoteElement.getAttribute('data-text');
                     this.quoteElement.textContent = text;
                     this.attributionElement.classList.add('attribution-visible');
-                    this.introTitle.classList.add('intro-visible');
-                    this.introElement.classList.add('intro-visible');
                     // Show all sections immediately
                     this.postsSection.classList.add('section-visible');
-                    this.goalsSection.classList.add('section-visible');
-                    this.aboutSection.classList.add('section-visible');
                     this.footer.classList.add('section-visible');
+                    this.revealReadingList();
                 }
 
                 // Instantly finish the animation so navigation is never blocked.
                 skipToEnd() {
                     if (this.cancelled) return;
                     this.cancelled = true;
-                    sessionStorage.setItem('heroAnimationPlayed', 'true');
                     document.body.classList.remove('animation-in-progress');
                     this.showAllImmediately();
                 }
 
                 async startAnimation() {
-                    sessionStorage.setItem('heroAnimationPlayed', 'true');
                     await this.typeQuote();
                     await this.typeAttribution();
-                    await this.flowInIntro();
+                    this.revealReadingList();
                     await this.delay(200);
                     await this.revealSections();
                 }
@@ -325,12 +392,9 @@
                     });
                 }
 
-                flowInIntro() {
-                    return new Promise((resolve) => {
-                        this.introTitle.classList.add('intro-visible');
-                        this.introElement.classList.add('intro-visible');
-                        setTimeout(resolve, 100);
-                    });
+                // Book list appears only once the typewriter has finished
+                revealReadingList() {
+                    if (this.readingList) this.readingList.reveal();
                 }
 
                 revealSections() {
@@ -341,8 +405,6 @@
                         // Stagger the reveal of each section
                         const sections = [
                             this.postsSection,
-                            this.goalsSection,
-                            this.aboutSection,
                             this.footer
                         ];
 

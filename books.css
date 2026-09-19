@@ -1,0 +1,158 @@
+/* ========================================
+   READING LIST (hero, under the Franklin quote)
+   One book per row, set like the concept E table (no headings).
+   Uses only the tokens from style.css; every word in --text-primary.
+   ======================================== */
+
+.reading-list {
+  width: 100%;
+  margin-top: var(--space-xl);
+  text-align: left;
+  /* Menu link lands with the label clear of the fixed header */
+  scroll-margin-top: calc(var(--header-height) + var(--space-md));
+}
+
+/* Same label as the Essays section */
+.reading-list > .category-label {
+  text-align: center;
+}
+
+/* Hidden until HeroAnimationController reveals it */
+.rl-js .reading-list {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+}
+
+.rl-js .reading-list.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.rl-list {
+  border-top: 1px solid var(--text-primary);
+}
+
+/* Number | book | author, like a table row */
+.rl-item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) minmax(0, 34%);
+  column-gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.rl-num {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--text-primary);
+}
+
+.rl-book {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-size: 1.375rem;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.rl-by {
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  color: var(--text-primary);
+  text-align: right;
+}
+
+/* First ten books only, until "Show all" */
+.rl-js .reading-list:not(.is-expanded) .rl-item:nth-child(n+11) {
+  display: none;
+}
+
+.reading-list.is-expanded .rl-item:nth-child(n+11) {
+  animation: rl-in 0.6s ease-out;
+}
+
+@keyframes rl-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.rl-toggle {
+  display: block;
+  min-height: 44px;
+  margin: var(--space-md) auto 0;
+  padding: 0 var(--space-sm);
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.rl-toggle:hover {
+  opacity: 0.7;
+}
+
+.rl-toggle[hidden] {
+  display: none;
+}
+
+/* Phone: number, book and author stack instead of squeezing into columns */
+@media (max-width: 760px) {
+  .rl-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+
+  .rl-num {
+    margin-bottom: 6px;
+  }
+
+  .rl-book {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .rl-by {
+    text-align: left;
+  }
+}
+
+/* ========================================
+   HOMEPAGE: essays now end the page (Foundation, Goals, About removed),
+   so close the gap to the footer to match the spacing between essays.
+   ======================================== */
+
+.posts-section {
+  padding-bottom: 0;
+}
+
+.site-footer {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  border-top: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rl-js .reading-list.is-visible {
+    transition: none;
+  }
+
+  .reading-list.is-expanded .rl-item {
+    animation: none;
+  }
+}
